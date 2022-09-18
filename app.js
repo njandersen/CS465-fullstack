@@ -13,6 +13,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
+hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
 app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
@@ -24,8 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/travel', travelRouter);
-
-hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
