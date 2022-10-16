@@ -1,6 +1,7 @@
-node_modules
+/node_modules
 .prettierrc
 .prettierignore
+.env
 
 .vscode/*
 !.vscode/settings.json
